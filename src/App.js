@@ -1,24 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Container from './components/moviesContainer';
+import Card from './components/movieCard';
+import Modall from './components/modal';
+import { Route } from 'react-router-dom'
+import Description from "./components/desc"
+import Acc from './components/acueil';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Route path="/:id" component={Description} />
+      <Route exact path="/" component={Acc} />
+      
     </div>
   );
 }
